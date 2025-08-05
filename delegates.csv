@@ -1,37 +1,31 @@
 Name,Email,Delegation,Number,Accomodation,Committee,Country,Comments,Food Preference
-Ronit RB,ronitbaskaran@gmail.com,Individual,7200254775,no,UNGA ESS,Malaysia,Wants a reallot,didnt pick
-Akash A,akashchilkoo@gmail.com,Individual,7305234625,no,CAI,TT Krishnamachari,Paid,Veg
-Swathika Anand,swathikaanand1234@gmail.com,Individual,7397285033,no,ARES,Netherlands,Wants a reallot,non-veg
-S Sukesh,ssukesh0306@gmail.com,Individual,9840306915,no,UNHRC,Maldives,Will pay tonight,non-veg
-Sai Nithya Maheswari PK,sainithyapk2006@gmail.com,Individual,9962466579,no,ARES,UAE,Has paid,veg
-Pranav Arrya,gowar007@gmail.com,Individual,9444884906,no,CAI,N Gopalaswamy Ayyangar,"Has paid, wants a reallot - has sent mail, he said he has gotten a reallot, wants confirmation again",veg
-Aravind N,trenhutpro45@gmail.com,Individual,9963610032,no,UNHRC,Peru,Has paid,veg
-V. Harshini Adhithan,harshiniadhithan11@gmail.com,Individual,9176099399,no,UNGA ESS,Greece,Paid,non- veg
-Shakthivel R,shakthivel2410515@ssn.edu.in,Individual,9043640953,no,UNHRC,Argentina,,non-veg
-Sidhant Singh Chauhan ,sidhantchauhan2007@gmail.com,Individual,9345052110,no,UNGA ESS,Syria,Told will call back later,non-veg
-Mahak Choradia,mahakchoradia19@gmail.com,Individual,9710380000,no,UNHRC,Russian Federation,Switched off,didnt pick up
-Boobesh IR,boobesh2410192@ssn.edu.in,Individual,9095644893,no,ECOSOC,South Africa,Paid (he said he paid directly to Shreya),Non-veg
-Janani anandh,jananianandh229@gmail.com,Individual,9150717772,no,BILDERBERG,Friedrich Merz,paid,doesnt want lunch
-Adhavan Suresh,adhavansuresh88@gmail.com,Individual,8754505981,yes,UNGA ESS,India,Paid,Veg
-Shahasrajith ,shahasrajithskumar@gmail.com,Individual,9566621541,no,ECOSOC,Colombia,Paid,non veg
-K S Vijayaraaghavan,vijayaraaghavan2470005@ssn.edu.in,Individual,9573221423,no,UNGA ESS,MEXICO,"he wont be attending, he wants to give his delegation to someone else",
-Sabarish S B ,sabarish2037@gmail.com,Individual,9150485290,no,CAI,Jagjivan Ram,,non veg
-Prisha RB,prisha2410993@ssn.edu.in,Individual,8438123681,no,BILDERBERG,Jensen Huang,replied over text saying she paid,non veg
-Supreeth .A,supreeth2410092@ssn.edu.in,Individual,9840997025,no,UNHRC,Tunisia,asking for a day extension,non veg
-Vishwesh Kumar ,vshwesh@gmail.com,Individual,6382213976,yes,ECOSOC,China,did not get mail ,non veg
-Viveka Ramkumar,rvivekaa@gmail.com,Individual,7338991210,Yes,UNGA ESS,Ukraine,wants a reallot,veg
-Darshana N,darshana2410948@ssn.edu.in,Individual,9363615696,No,ECOSOC,Laos,,non veg
-Hridhaan Shingvi,hridhaangamerion@gmail.com,Individual,9597707725,No,ARES,France,paid,veg
-Vihaan Reddy,vihaan.buddy@gmail.com,Individual,9600648292,No,UNGA ESS,Russia,,non veg
-Hriday Advani,advanihriday@gmail.com,Individual,9677065470,No,ECOSOC,Azerbaijan,,non veg
-Akshat,akshat25310038@snuchennai.edu.in,Individual,8712702607,No,CAI,John Mathai,paid,veg
-S S KAVINTHRA,kavinthra.ss@gmail.com,Individual,9080627005,No,ECOSOC,Bangladesh,"requested for reallot, she would pay by tonight most prolly",non veg
-Thanga Anthony Celestine S,sthance07@gmail.com,Individual,9363616037,No,UNHRC,India,wants reallot,non veg
-Nithiyasri Chakravarthy,nithiyasrichakravarthy27@gmail.com,Individual,9791043488,No,UNHRC,Venezuela,will pay by tonight,veg
-Siddharth Balaharish,siddharthbalaharish@gmail.com,Individual,9384827856,No,A.R.E.S,India,made the payment,veg
-V Harshith Venkatesh,harshithvenkatesh2410299@ssn.edu.in,Individual,7338956460,No,Bilderberg,Amin H Nasser,paid,non veg
-Nithya Priya,nithya1809priya@gmail.com,Individual,9384863582,No,ECOSOC,Uruguay,paid,non veg
-Abha Mishra,abhamishra0822@gmail.com,Individual,9043043339,No,ECOSOC,Paraguay,paid,non veg
-Visesh P,vipvisesh7@gmail.com,Individual,7904680926,No,UNHRC,Senegal,will pay by today,veg
-Mithun Kishore M,mithun2310700@ssn.edu.in,Individual,8610280850,No,UNGA-ESS,Bulgaria,Paid,non veg
-Tarun Suresh,tarun2370025@ssn.edu.in,Individual,9871972744,No,UNGA ESS,Australia,"Paid, requested reallot",non veg
+Person_1,person1@example.com,Individual,9282282431,no,UNHRC,Bulgaria,Has sent mail,didnt pick
+Person_2,person2@example.com,Individual,7364863596,yes,UNHRC,Greece,Did not get mail,non-veg
+Person_3,person3@example.com,Individual,8988234536,no,CAI,Maldives,Paid,doesnt want lunch
+Person_4,person4@example.com,Individual,9512383691,No,CAI,Uruguay,Asked for extension,veg
+Person_5,person5@example.com,Individual,8730596140,no,CAI,China,Paid,doesnt want lunch
+Person_6,person6@example.com,Individual,7887593571,No,ARES,Jagjivan Ram,Switched off,doesnt want lunch
+Person_7,person7@example.com,Individual,8512383066,no,UNHRC,France,Wants reallot,non-veg
+Person_8,person8@example.com,Individual,9886383924,no,CAI,Russia,Switched off,non-veg
+Person_9,person9@example.com,Individual,9609346650,Yes,ECOSOC,Argentina,Paid,doesnt want lunch
+Person_10,person10@example.com,Individual,8650123870,Yes,UNHRC,Syria,Requested reallot,non-veg
+Person_11,person11@example.com,Individual,8752112016,No,BILDERBERG,Azerbaijan,Has sent mail,doesnt want lunch
+Person_12,person12@example.com,Individual,7919816118,no,UNHRC,South Africa,,didnt pick
+Person_13,person13@example.com,Individual,8673515529,No,UNGA ESS,Malaysia,Paid,doesnt want lunch
+Person_14,person14@example.com,Individual,9491953680,Yes,BILDERBERG,Friedrich Merz,Asked for extension,non-veg
+Person_15,person15@example.com,Individual,9911037300,No,UNGA ESS,TT Krishnamachari,Did not get mail,non-veg
+Person_16,person16@example.com,Individual,8456937797,yes,CAI,Syria,Requested reallot,veg
+Person_17,person17@example.com,Individual,8562386697,no,UNGA ESS,Bangladesh,Has sent mail,non-veg
+Person_18,person18@example.com,Individual,9643985343,Yes,BILDERBERG,N Gopalaswamy Ayyangar,Has sent mail,didnt pick
+Person_19,person19@example.com,Individual,7875452318,Yes,ECOSOC,Paraguay,Paid,non-veg
+Person_20,person20@example.com,Individual,9141797574,yes,CAI,India,Will pay tonight,doesnt want lunch
+Person_21,person21@example.com,Individual,9967248292,No,ECOSOC,China,Will pay tonight,veg
+Person_22,person22@example.com,Individual,8550871576,yes,CAI,Laos,Did not get mail,didnt pick
+Person_23,person23@example.com,Individual,7057101154,yes,BILDERBERG,Jensen Huang,,non-veg
+Person_24,person24@example.com,Individual,7605604165,No,BILDERBERG,Azerbaijan,Wants reallot,doesnt want lunch
+Person_25,person25@example.com,Individual,8743802065,No,UNHRC,Mexico,Will pay tonight,didnt pick
+Person_26,person26@example.com,Individual,8317533489,No,ARES,Russia,Asked for extension,doesnt want lunch
+Person_27,person27@example.com,Individual,9797416542,Yes,CAI,China,Wants reallot,non-veg
+Person_28,person28@example.com,Individual,7379737072,yes,BILDERBERG,Maldives,Has sent mail,doesnt want lunch
+Person_29,person29@example.com,Individual,9806285768,no,ECOSOC,Jagjivan Ram,Paid,non-veg
+Person_30,person30@example.com,Individual,7602125621,yes,ARES,France,Did not get mail,didnt pick
