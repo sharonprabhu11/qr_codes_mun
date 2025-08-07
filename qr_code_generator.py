@@ -28,9 +28,10 @@ def create_qr_code(data: dict, filename: str) -> str:
     qr.make(fit=True)
     
     img = qr.make_image(fill_color="black", back_color="white")
+    img = img.resize((700, 700))
+    
     img.save(filename)
     return filename
-
 def process_delegates(csv_file: str) -> None:
     
     # Read CSV file
@@ -44,9 +45,11 @@ def process_delegates(csv_file: str) -> None:
     # Create output directories
     os.makedirs('qr_codes', exist_ok=True)
     os.makedirs('output', exist_ok=True)
+    os.makedirs('id_cards', exist_ok=True) 
     
     used_codes = set()
     results = []
+    id_card_template = "/home/sharonprabhu/backup/college/ssn_snuc_mun_25/qr_codes/IDCard.png"
     
     print("\n Generating codes and QR codes...")
     
@@ -55,19 +58,36 @@ def process_delegates(csv_file: str) -> None:
             # Generate unique code
             committee = row.get('Committee', 'GEN')
             unique_code = generate_unique_code(committee, used_codes)
+            food_preference = row.get('Food Preference', 'Not Specified')
             
             # Create JSON data
             delegate_data = {
-                "message": "message!",
-                "name": row.get('Name', 'Unknown Delegate'),
+                "message": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                "name": row.get('Name', 'Unknown'),
                 "code": unique_code,
                 "committee": committee,
-                "country": row.get('Country', 'Unknown')
+                "country": row.get('Country', 'Unknown'),
+                "food preference": food_preference
+            }
+            
+            qr_data = {
+                "message": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                "name": row.get('Name', 'Unknown'),
+                "code": unique_code     
             }
             
             # Generate QR code
-            qr_filename = f"qr_codes/{unique_code}_{row.get('Name', 'unknown').replace(' ', '_')}.png"
-            create_qr_code(delegate_data, qr_filename)
+            qr_filename = f"qr_codes/{unique_code}.png"
+            create_qr_code(qr_data, qr_filename)
+            
+            # Create ID card with QR code
+            template = Image.open(id_card_template)
+            qr_img = Image.open(qr_filename)
+            
+         
+            template.paste(qr_img, (200, 500))  
+            id_card_filename = f"id_cards/{unique_code}_id_card.png"
+            template.save(id_card_filename)
             
             # Store result
             result = {
@@ -77,14 +97,19 @@ def process_delegates(csv_file: str) -> None:
                 'Original_Country': row.get('Country'),
                 'Generated_Code': unique_code,
                 'QR_Filename': qr_filename,
+                'ID_Card_Filename': id_card_filename,
                 'JSON_Data': json.dumps(delegate_data)
             }
             results.append(result)
             
-            print(f"{unique_code} - {row.get('Name')} ({committee})")
+            print(f"{unique_code} - {row.get('Name')} ({committee}) - ID card created")
             
         except Exception as e:
             print(f"Error processing {row.get('Name', 'unknown')}: {e}")
+    
+    # Add 'code' column to original dataframe and save as results.csv
+    df['code'] = [r['Generated_Code'] for r in results]
+    df.to_csv('output/results.csv', index=False)
     
     # Save results to CSV
     results_df = pd.DataFrame(results)
@@ -95,7 +120,7 @@ def process_delegates(csv_file: str) -> None:
     with open('output/all_delegates.json', 'w') as f:
         json.dump(json_data, f, indent=2)
     
-    print(f"\n {len(results)} QR codes generated")
+    print(f"\n {len(results)} QR codes and ID cards generated")
 
 if __name__ == "__main__":
     

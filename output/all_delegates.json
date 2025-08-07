@@ -1,212 +1,34 @@
 [
   {
-    "message": "message!",
+    "message": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "name": "Person_1",
-    "code": "UNH457",
+    "code": "UNH540",
     "committee": "UNHRC",
-    "country": "Bulgaria"
+    "country": "Bulgaria",
+    "food preference": "didnt pick"
   },
   {
-    "message": "message!",
+    "message": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "name": "Person_2",
-    "code": "UNH356",
+    "code": "UNH156",
     "committee": "UNHRC",
-    "country": "Greece"
+    "country": "Greece",
+    "food preference": "non-veg"
   },
   {
-    "message": "message!",
+    "message": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "name": "Person_3",
-    "code": "CAI996",
+    "code": "CAI829",
     "committee": "CAI",
-    "country": "Maldives"
+    "country": "Maldives",
+    "food preference": "doesnt want lunch"
   },
   {
-    "message": "message!",
+    "message": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "name": "Person_4",
-    "code": "CAI638",
+    "code": "CAI954",
     "committee": "CAI",
-    "country": "Uruguay"
-  },
-  {
-    "message": "message!",
-    "name": "Person_5",
-    "code": "CAI334",
-    "committee": "CAI",
-    "country": "China"
-  },
-  {
-    "message": "message!",
-    "name": "Person_6",
-    "code": "ARE125",
-    "committee": "ARES",
-    "country": "Jagjivan Ram"
-  },
-  {
-    "message": "message!",
-    "name": "Person_7",
-    "code": "UNH740",
-    "committee": "UNHRC",
-    "country": "France"
-  },
-  {
-    "message": "message!",
-    "name": "Person_8",
-    "code": "CAI906",
-    "committee": "CAI",
-    "country": "Russia"
-  },
-  {
-    "message": "message!",
-    "name": "Person_9",
-    "code": "ECO757",
-    "committee": "ECOSOC",
-    "country": "Argentina"
-  },
-  {
-    "message": "message!",
-    "name": "Person_10",
-    "code": "UNH613",
-    "committee": "UNHRC",
-    "country": "Syria"
-  },
-  {
-    "message": "message!",
-    "name": "Person_11",
-    "code": "BIL976",
-    "committee": "BILDERBERG",
-    "country": "Azerbaijan"
-  },
-  {
-    "message": "message!",
-    "name": "Person_12",
-    "code": "UNH714",
-    "committee": "UNHRC",
-    "country": "South Africa"
-  },
-  {
-    "message": "message!",
-    "name": "Person_13",
-    "code": "UNG499",
-    "committee": "UNGA ESS",
-    "country": "Malaysia"
-  },
-  {
-    "message": "message!",
-    "name": "Person_14",
-    "code": "BIL711",
-    "committee": "BILDERBERG",
-    "country": "Friedrich Merz"
-  },
-  {
-    "message": "message!",
-    "name": "Person_15",
-    "code": "UNG914",
-    "committee": "UNGA ESS",
-    "country": "TT Krishnamachari"
-  },
-  {
-    "message": "message!",
-    "name": "Person_16",
-    "code": "CAI134",
-    "committee": "CAI",
-    "country": "Syria"
-  },
-  {
-    "message": "message!",
-    "name": "Person_17",
-    "code": "UNG452",
-    "committee": "UNGA ESS",
-    "country": "Bangladesh"
-  },
-  {
-    "message": "message!",
-    "name": "Person_18",
-    "code": "BIL840",
-    "committee": "BILDERBERG",
-    "country": "N Gopalaswamy Ayyangar"
-  },
-  {
-    "message": "message!",
-    "name": "Person_19",
-    "code": "ECO354",
-    "committee": "ECOSOC",
-    "country": "Paraguay"
-  },
-  {
-    "message": "message!",
-    "name": "Person_20",
-    "code": "CAI583",
-    "committee": "CAI",
-    "country": "India"
-  },
-  {
-    "message": "message!",
-    "name": "Person_21",
-    "code": "ECO289",
-    "committee": "ECOSOC",
-    "country": "China"
-  },
-  {
-    "message": "message!",
-    "name": "Person_22",
-    "code": "CAI341",
-    "committee": "CAI",
-    "country": "Laos"
-  },
-  {
-    "message": "message!",
-    "name": "Person_23",
-    "code": "BIL933",
-    "committee": "BILDERBERG",
-    "country": "Jensen Huang"
-  },
-  {
-    "message": "message!",
-    "name": "Person_24",
-    "code": "BIL219",
-    "committee": "BILDERBERG",
-    "country": "Azerbaijan"
-  },
-  {
-    "message": "message!",
-    "name": "Person_25",
-    "code": "UNH418",
-    "committee": "UNHRC",
-    "country": "Mexico"
-  },
-  {
-    "message": "message!",
-    "name": "Person_26",
-    "code": "ARE114",
-    "committee": "ARES",
-    "country": "Russia"
-  },
-  {
-    "message": "message!",
-    "name": "Person_27",
-    "code": "CAI851",
-    "committee": "CAI",
-    "country": "China"
-  },
-  {
-    "message": "message!",
-    "name": "Person_28",
-    "code": "BIL723",
-    "committee": "BILDERBERG",
-    "country": "Maldives"
-  },
-  {
-    "message": "message!",
-    "name": "Person_29",
-    "code": "ECO948",
-    "committee": "ECOSOC",
-    "country": "Jagjivan Ram"
-  },
-  {
-    "message": "message!",
-    "name": "Person_30",
-    "code": "ARE530",
-    "committee": "ARES",
-    "country": "France"
+    "country": "Uruguay",
+    "food preference": "veg"
   }
 ]

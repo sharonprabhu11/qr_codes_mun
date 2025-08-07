@@ -3,29 +3,3 @@ Person_1,person1@example.com,Individual,9282282431,no,UNHRC,Bulgaria,Has sent ma
 Person_2,person2@example.com,Individual,7364863596,yes,UNHRC,Greece,Did not get mail,non-veg
 Person_3,person3@example.com,Individual,8988234536,no,CAI,Maldives,Paid,doesnt want lunch
 Person_4,person4@example.com,Individual,9512383691,No,CAI,Uruguay,Asked for extension,veg
-Person_5,person5@example.com,Individual,8730596140,no,CAI,China,Paid,doesnt want lunch
-Person_6,person6@example.com,Individual,7887593571,No,ARES,Jagjivan Ram,Switched off,doesnt want lunch
-Person_7,person7@example.com,Individual,8512383066,no,UNHRC,France,Wants reallot,non-veg
-Person_8,person8@example.com,Individual,9886383924,no,CAI,Russia,Switched off,non-veg
-Person_9,person9@example.com,Individual,9609346650,Yes,ECOSOC,Argentina,Paid,doesnt want lunch
-Person_10,person10@example.com,Individual,8650123870,Yes,UNHRC,Syria,Requested reallot,non-veg
-Person_11,person11@example.com,Individual,8752112016,No,BILDERBERG,Azerbaijan,Has sent mail,doesnt want lunch
-Person_12,person12@example.com,Individual,7919816118,no,UNHRC,South Africa,,didnt pick
-Person_13,person13@example.com,Individual,8673515529,No,UNGA ESS,Malaysia,Paid,doesnt want lunch
-Person_14,person14@example.com,Individual,9491953680,Yes,BILDERBERG,Friedrich Merz,Asked for extension,non-veg
-Person_15,person15@example.com,Individual,9911037300,No,UNGA ESS,TT Krishnamachari,Did not get mail,non-veg
-Person_16,person16@example.com,Individual,8456937797,yes,CAI,Syria,Requested reallot,veg
-Person_17,person17@example.com,Individual,8562386697,no,UNGA ESS,Bangladesh,Has sent mail,non-veg
-Person_18,person18@example.com,Individual,9643985343,Yes,BILDERBERG,N Gopalaswamy Ayyangar,Has sent mail,didnt pick
-Person_19,person19@example.com,Individual,7875452318,Yes,ECOSOC,Paraguay,Paid,non-veg
-Person_20,person20@example.com,Individual,9141797574,yes,CAI,India,Will pay tonight,doesnt want lunch
-Person_21,person21@example.com,Individual,9967248292,No,ECOSOC,China,Will pay tonight,veg
-Person_22,person22@example.com,Individual,8550871576,yes,CAI,Laos,Did not get mail,didnt pick
-Person_23,person23@example.com,Individual,7057101154,yes,BILDERBERG,Jensen Huang,,non-veg
-Person_24,person24@example.com,Individual,7605604165,No,BILDERBERG,Azerbaijan,Wants reallot,doesnt want lunch
-Person_25,person25@example.com,Individual,8743802065,No,UNHRC,Mexico,Will pay tonight,didnt pick
-Person_26,person26@example.com,Individual,8317533489,No,ARES,Russia,Asked for extension,doesnt want lunch
-Person_27,person27@example.com,Individual,9797416542,Yes,CAI,China,Wants reallot,non-veg
-Person_28,person28@example.com,Individual,7379737072,yes,BILDERBERG,Maldives,Has sent mail,doesnt want lunch
-Person_29,person29@example.com,Individual,9806285768,no,ECOSOC,Jagjivan Ram,Paid,non-veg
-Person_30,person30@example.com,Individual,7602125621,yes,ARES,France,Did not get mail,didnt pick
