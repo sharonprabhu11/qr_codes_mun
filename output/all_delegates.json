@@ -1,0 +1,34 @@
+[
+  {
+    "message": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "name": "Prisha RB",
+    "code": "GEN5355",
+    "committee": "GEN",
+    "country": "Jensen Huang",
+    "food_preference": "Not Specified"
+  },
+  {
+    "message": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "name": "Janani anandh",
+    "code": "GEN7698",
+    "committee": "GEN",
+    "country": "Elon Musk",
+    "food_preference": "Not Specified"
+  },
+  {
+    "message": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "name": "V Harshith Venkatesh",
+    "code": "GEN5507",
+    "committee": "GEN",
+    "country": "Xi Jinping",
+    "food_preference": "Not Specified"
+  },
+  {
+    "message": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "name": "Kotikalapudi Prabha Sankara Krishna Sastri",
+    "code": "GEN4852",
+    "committee": "GEN",
+    "country": "Chey Tae-won",
+    "food_preference": "Not Specified"
+  }
+]

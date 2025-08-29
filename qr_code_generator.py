@@ -2,134 +2,182 @@ import pandas as pd
 import qrcode
 import json
 import random
-import os
 from PIL import Image
+from pathlib import Path
+import logging
 
-def generate_unique_code(committee: str, used_codes: set[str]) -> str:
-    """
-    Generates a unique 6-character code by combining the first 3 letters of the committee name 
-    with a random 3-digit number, ensuring no duplicates by checking against previously used codes.
-    """
-    
-    prefix = committee[:3].upper()
-    
-    while True:
-        random_num = random.randint(100, 999)
-        code = f"{prefix}{random_num}"
-        if code not in used_codes:
-            used_codes.add(code)
-            return code
+logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+logger = logging.getLogger(__name__)
 
-def create_qr_code(data: dict, filename: str) -> str:
-    """
-    Creates a QR code from dictionary data by converting it to JSON, generating the QR code image,
-    resizing it to 700x700 pixels, and saving it to the specified filename.
-    """
-    qr = qrcode.QRCode(
-        version=1,
-        error_correction=qrcode.constants.ERROR_CORRECT_L,
-        box_size=10,
-        border=4,
-    )
-    qr.add_data(json.dumps(data))
-    qr.make(fit=True)
-    
-    img = qr.make_image(fill_color="black", back_color="white")
-    img = img.resize((700, 700))
-    
-    img.save(filename)
-    return filename
+OUTPUT_DIR = Path("output") #using pathlib for cross-platform compatibility
+QR_CODES_DIR = OUTPUT_DIR / "qr_codes"
+ID_CARDS_DIR = OUTPUT_DIR / "id_cards"
 
-def process_delegates(csv_file: str) -> None:
-    """
-    Reads delegate information from CSV file, generates unique codes and QR codes for each delegate,
-    creates personalized ID cards by pasting QR codes onto a template, and saves all outputs 
-    (individual QR codes, ID cards, CSV results, and JSON data) to organized folders.
-    """
-    try:
-        df = pd.read_csv(csv_file)
-        print(f"Loaded {len(df)} delegates from CSV")
-    except Exception as e:
-        print(f"Error reading CSV: {e}")
-        return
-   
-    os.makedirs('qr_codes', exist_ok=True)
-    os.makedirs('output', exist_ok=True)
-    os.makedirs('id_cards', exist_ok=True) 
+QR_CODE_SIZE = (700, 700)
+QR_CODE_POSITION = (99, 422)
+
+ID_CARD_TEMPLATE = "IDCard.png"
+DEFAULT_CSV_FILE = "sample.csv"
+
+
+class QRGenerator:
     
-    used_codes = set()
-    results = []
-    id_card_template = "IDCard.png"
+    def __init__(self):
+        self.used_codes = set()
+        self._setup_directories() # the '_' indicates that this is a private method
     
-    print("\n Generating codes and QR codes...")
+    def _setup_directories(self) -> None:
+        for directory in [OUTPUT_DIR, QR_CODES_DIR, ID_CARDS_DIR]:
+            directory.mkdir(exist_ok = True)    
     
-    for index, row in df.iterrows():
+
+    def _generate_unique_code(self, committee: str) -> str:
+        """
+        Generates a unique 6-character code by combining the first 3 letters of the committee name 
+        with a random 3-digit number, ensuring no duplicates by checking against previously used codes.
+        """
+        
+        prefix = committee[:3].upper()
+        
+        while True:
+            random_num = random.randint(1000, 9999)
+            code = f"{prefix}{random_num}"
+            if code not in self.used_codes:
+                self.used_codes.add(code)
+                return code
+
+    def _create_qr_code(self, data: dict) -> str:
+        """
+        Creates a QR code from dictionary data by converting it to JSON, generating the QR code image,
+        resizing it to 700x700 pixels, and saving it to the specified filename.
+        """
+        qr = qrcode.QRCode(
+            version=1,
+            error_correction=qrcode.constants.ERROR_CORRECT_L,
+            box_size=10,
+            border=4,
+        )
+        
+        qr.add_data(json.dumps(data))
+        qr.make(fit=True)
+        
+        img = qr.make_image(fill_color="black", back_color="white")
+        img = img.resize(QR_CODE_SIZE)
+        
+        filename = QR_CODES_DIR / f"{data['code']}.png"
+        img.save(filename)
+        return filename
+    
+    def _create_id_card(self, qr_path: Path ,code: str) -> Path:
+        
+        if not Path(ID_CARD_TEMPLATE).exists():
+            raise FileNotFoundError(f"Template {ID_CARD_TEMPLATE} not found")
+        
+        template = Image.open(ID_CARD_TEMPLATE)
+        qr_image = Image.open(qr_path)
+        
+        template.paste(qr_image, QR_CODE_POSITION)
+        
+        id_card_path = ID_CARDS_DIR / f"{code}.png"
+        template.save(id_card_path)
+        return id_card_path
+    
+    def _create_delegate_data(self, row: pd.Series, code: str) -> dict[str]:
+        """Create comprehensive delegate data dictionary."""
+        return {
+            "message": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "name": row.get('Name', 'Unknown'),
+            "code": code,
+            "committee": row.get('Allotment', 'GEN'),
+            "country": row.get('Country', 'Unknown'),
+            "food_preference": row.get('Food Preference', 'Not Specified')
+        }
+    
+    def _create_qr_data(self, row: pd.Series, code: str) -> dict[str, str]:
+        """Create QR code specific data dictionary."""
+        return {
+            "name": row.get('Name', 'Unknown'),
+            "code": code,
+            "message": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        }
+    
+    def process_delegates(self, csv_file: str) -> None:
+        """
+        Process all delegates from CSV file - generate codes, QR codes, and ID cards.
+        """
+        
         try:
-    
-            committee = row.get('Committee', 'GEN')
-            unique_code = generate_unique_code(committee, used_codes)
-            food_preference = row.get('Food Preference', 'Not Specified')
-           
-            delegate_data = {
-                "message": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                "name": row.get('Name', 'Unknown'),
-                "code": unique_code,
-                "committee": committee,
-                "country": row.get('Country', 'Unknown'),
-                "food preference": food_preference
-            }
-            
-            qr_data = {
-               
-                "name": row.get('Name', 'Unknown'),
-                "code": unique_code,
-                "message": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",    
-            }
-            
-            qr_filename = f"qr_codes/{unique_code}.png"
-            create_qr_code(qr_data, qr_filename)
-            
-          
-            template = Image.open(id_card_template)
-            qr_img = Image.open(qr_filename)
-            
-         
-            template.paste(qr_img, (99, 422))  
-            id_card_filename = f"id_cards/{unique_code}.png"
-            template.save(id_card_filename)
-            
-            result = {
-                'Original_Name': row.get('Name'),
-                'Original_Email': row.get('Email'),
-                'Original_Committee': row.get('Committee'),
-                'Original_Country': row.get('Country'),
-                'Generated_Code': unique_code,
-                'QR_Filename': qr_filename,
-                'ID_Card_Filename': id_card_filename,
-                'JSON_Data': json.dumps(delegate_data)
-            }
-            results.append(result)
-            
-            print(f"{unique_code} - {row.get('Name')} ({committee}) - ID card created")
-            
+            df = pd.read_csv(csv_file)
+            logger.info(f"Loaded {len(df)} delegates from CSV")
+        except FileNotFoundError:
+            logger.error(f"CSV file '{csv_file}' not found")
+            return
         except Exception as e:
-            print(f"Error processing {row.get('Name', 'unknown')}: {e}")
-   
-    df['code'] = [r['Generated_Code'] for r in results]
-    df.to_csv('output/results.csv', index=False)
+            logger.error(f"Error reading CSV: {e}")
+            return
+        
+        if df.empty:
+            logger.warning("CSV file is empty")
+            return
+        
+        logger.info("Generating codes and QR codes...")
+        results = []
+        
+        # Process each delegate
+        for index, row in df.iterrows():
+            try:
+                
+                committee = row.get('Allotment', 'GEN')
+                code = self._generate_unique_code(committee)
+              
+                delegate_data = self._create_delegate_data(row, code)
+                qr_data = self._create_qr_data(row, code)
+                
+                qr_path = self._create_qr_code(qr_data)
+                id_card_path = self._create_id_card(qr_path, code)
+               
+                result = {
+                    'Original_Name': row.get('Name'),
+                    'Original_Email': row.get('Email'),
+                    'Original_Committee': row.get('Allotment'),
+                    'Original_Country': row.get('Country'),
+                    'Generated_Code': code,
+                    'QR_Filename': str(qr_path),
+                    'ID_Card_Filename': str(id_card_path),
+                    'JSON_Data': json.dumps(delegate_data)
+                }
+                results.append(result)
+                
+                logger.info(f"{code} - {row.get('Name')} ({committee}) - ID card created")
+                
+            except Exception as e:
+                logger.error(f"Error processing {row.get('Name', 'unknown')}: {e}")
+                continue
+        
+        # Save all results
+        if results:
+            df['code'] = [r['Generated_Code'] for r in results]
+            df.to_csv(OUTPUT_DIR / 'results.csv', index=False)
+            
+            results_df = pd.DataFrame(results)
+            results_df.to_csv(OUTPUT_DIR / 'delegates_with_codes.csv', index=False)
+            
+            # Save JSON data
+            json_data = [json.loads(result['JSON_Data']) for result in results]
+            with open(OUTPUT_DIR / 'all_delegates.json', 'w') as f:
+                json.dump(json_data, f, indent=2)
+            
+            logger.info(f"{len(results)} QR codes and ID cards generated successfully")
+        else:
+            logger.warning("No delegates were processed successfully")
     
- 
-    results_df = pd.DataFrame(results)
-    results_df.to_csv('output/delegates_with_codes.csv', index=False)
-    
-   
-    json_data = [json.loads(result['JSON_Data']) for result in results]
-    with open('output/all_delegates.json', 'w') as f:
-        json.dump(json_data, f, indent=2)
-    
-    print(f"\n {len(results)} QR codes and ID cards generated")
+
+
+
+def main():
+    generator = QRGenerator()
+    generator.process_delegates(DEFAULT_CSV_FILE)
+
 
 if __name__ == "__main__":
-    
-    csv_filename = 'delegates.csv'
-    process_delegates(csv_filename)
+    main()
